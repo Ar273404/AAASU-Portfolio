@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "vite",
     "dev:client": "vite",
-    "dev:server": "node server/dist/index.js",
-    "build:server": "tsc --project tsconfig.server.json",
+    "dev:server": "tsx watch server/index.ts",
+    "build:server": "tsc --project tsconfig.server.json && cp -r server/dist/* ./dist-server/",
     "build": "vite build",
-    "start": "npm run build:server && node --experimental-modules server/dist/index.js",
+    "start": "node server/dist/index.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },

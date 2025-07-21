@@ -1,22 +1,26 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// ES module __dirname equivalent
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// Use __dirname directly since we're using CommonJS now
+const __dirname = path.dirname(__filename);
+
+console.log('Starting AAASU Portfolio server...');
+console.log('Port:', PORT);
+console.log('Directory:', __dirname);
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from the React app build directory
-app.use(express.static(path.join(__dirname, '../dist')));
+// Serve static files from the React app build directory  
+const staticPath = path.join(__dirname, '../../dist');
+console.log('Static files path:', staticPath);
+app.use(express.static(staticPath));
+
 // API Routes
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'AAASU Portfolio API is running!' });
@@ -76,9 +80,12 @@ app.get('/api/diary', (req, res) => {
 
 // Catch all handler: send back React's index.html file for any non-API routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../dist/index.html'));
+  const indexPath = path.join(__dirname, '../../dist/index.html');
+  console.log('Serving index.html from:', indexPath);
+  res.sendFile(indexPath);
 });
 
-app.listen(PORT, () => {
+app.listen( '0.0.0.0', () => {
   console.log(`🚀 AAASU Portfolio server running on port ${PORT}`);
+  console.log(`🌐 Server accessible at http://0.0.0.0:${PORT}`);
 });
