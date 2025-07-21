@@ -2,7 +2,7 @@ services:
   - type: web
     name: aaasu-portfolio
     env: node
-    buildCommand: npm install && npm run build && npm run build:server
+    buildCommand: npm install && npm run build && npm run build:server 
     startCommand: npm start
     envVars:
       - key: NODE_ENV
