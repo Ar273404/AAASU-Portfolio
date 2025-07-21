@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen, User, Calendar, Heart, MessageCircle, Share2 } from 'lucide-react';
 

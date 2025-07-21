@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Menu, X, Users, Camera, BookOpen, Clock, Target } from "lucide-react";

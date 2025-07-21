@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ChevronRight, Heart, Camera, Users, BookOpen } from "lucide-react";
+import { ChevronRight, Camera, Users, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import QuoteRotator from "../components/QuoteRotator";

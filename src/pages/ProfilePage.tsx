@@ -1,10 +1,8 @@
-import React from "react";
 import { motion } from "framer-motion";
 import {
   Github,
   Linkedin,
   Mail,
-  MapPin,
   GraduationCap,
   Heart,
 } from "lucide-react";
