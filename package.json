@@ -7,9 +7,9 @@
     "dev": "vite",
     "dev:client": "vite",
     "dev:server": "node server/dist/index.js",
-    "build:server": "tsc server/index.ts --outDir server/dist --target es2020 --module commonjs --esModuleInterop --allowSyntheticDefaultImports --skipLibCheck",
+    "build:server": "tsc --project tsconfig.server.json",
     "build": "vite build",
-    "start": "npm run build:server && node server/dist/index.js",
+    "start": "npm run build:server && node --experimental-modules server/dist/index.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
