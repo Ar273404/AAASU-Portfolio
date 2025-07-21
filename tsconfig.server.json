@@ -14,7 +14,10 @@
 
     // Bundler mode resolution for Vite/modern tools
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+
+    // ❌ Removed this line ↓ to fix error
+    // "allowImportingTsExtensions": true,
+
     "isolatedModules": true,
     "moduleDetection": "force",
 
@@ -27,10 +30,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    // Important: allow TypeScript to emit compiled JS files
     "noEmit": false
   },
-
-  // Include the `server` folder, not `src` (for backend)
   "include": ["server"]
 }
