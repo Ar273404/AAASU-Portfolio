@@ -22,12 +22,12 @@ console.log('Static files path:', staticPath);
 app.use(express.static(staticPath));
 
 // API Routes
-app.get('/api/health', (req, res) => {
+app.get('/api/health', (_, res) => {
   res.json({ status: 'OK', message: 'AAASU Portfolio API is running!' });
-});
 
+});
 // Mock data endpoints
-app.get('/api/members', (req, res) => {
+app.get('/api/members', (_, res) => {
   const members = [
     {
       id: 1,
@@ -45,7 +45,7 @@ app.get('/api/members', (req, res) => {
   res.json(members);
 });
 
-app.get('/api/gallery', (req, res) => {
+app.get('/api/gallery', (_, res) => {
   const photos = [
     {
       id: 1,
@@ -61,7 +61,7 @@ app.get('/api/gallery', (req, res) => {
   res.json(photos);
 });
 
-app.get('/api/diary', (req, res) => {
+app.get('/api/diary', (_, res) => {
   const entries = [
     {
       id: 1,
@@ -79,7 +79,7 @@ app.get('/api/diary', (req, res) => {
 });
 
 // Catch all handler: send back React's index.html file for any non-API routes
-app.get('*', (req, res) => {
+app.get('*', (_, res) => {
   const indexPath = path.join(__dirname, '../../dist/index.html');
   console.log('Serving index.html from:', indexPath);
   res.sendFile(indexPath);
