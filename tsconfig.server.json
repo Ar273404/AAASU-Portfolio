@@ -6,19 +6,31 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
-    /* Bundler mode */
+    // Output compiled files to this folder (needed by `cp` in build step)
+    "outDir": "server/dist",
+
+    // Compile from this root source directory
+    "rootDir": "server",
+
+    // Bundler mode resolution for Vite/modern tools
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
+
+    // Enable JSX support (only needed if you're using JSX in server)
     "jsx": "react-jsx",
 
-    /* Linting */
+    // Enable all strict checks
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    // Important: allow TypeScript to emit compiled JS files
+    "noEmit": false
   },
-  "include": ["src"]
+
+  // Include the `server` folder, not `src` (for backend)
+  "include": ["server"]
 }
