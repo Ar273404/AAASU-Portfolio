@@ -29,7 +29,7 @@ export const ASSET_PATHS = {
     //   '/images/gallery/celebrations/job-celebration-2023.jpg',
     ],
     college: [
-      '/images/gallery/college/college1.jpg',
+      '/images/gallery/college/college3.jpg',
       '/images/gallery/college/college2.jpg',
       '/images/gallery/college/college3.jpg',
     //   '/images/gallery/college/first-day-2018.jpg',
