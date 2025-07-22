@@ -7,9 +7,7 @@
     "dev": "vite",
     "dev:client": "vite",
     "dev:server": "tsx watch server/index.ts",
-    "build:server": "tsc --project tsconfig.server.json && rm -f dist-server && mkdir -p dist-server && cp -r server/dist/* ./dist-server/",
-    "build": "vite build",
-    "start": "node server/dist/index.js",
+    "build:server": "tsc --project tsconfig.server.json && cp -r server/dist/* ./dist-server/",
     "lint": "eslint .",
     "preview": "vite preview"
   },

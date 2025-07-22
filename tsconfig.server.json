@@ -1,36 +1,19 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-
-    // Output compiled files to this folder (needed by `cp` in build step)
-    "outDir": "server/dist",
-
-    // Compile from this root source directory
-    "rootDir": "server",
-
-    // Bundler mode resolution for Vite/modern tools
-    "moduleResolution": "bundler",
-
-    // ❌ Removed this line ↓ to fix error
-    // "allowImportingTsExtensions": true,
-
-    "isolatedModules": true,
-    "moduleDetection": "force",
-
-    // Enable JSX support (only needed if you're using JSX in server)
-    "jsx": "react-jsx",
-
-    // Enable all strict checks
+    "module": "ES2020",
+    "lib": ["ES2020"],
+    "outDir": "./server/dist",
+    "rootDir": "./server",
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-
-    "noEmit": false
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": false
   },
-  "include": ["server"]
+  "include": ["server/**/*"],
+  "exclude": ["node_modules", "dist", "src"]
 }
