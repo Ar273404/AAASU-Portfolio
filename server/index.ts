@@ -18,8 +18,11 @@ console.log('Directory:', __dirname);
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from the React app build directory  
-const staticPath = path.join(__dirname, '../../dist');
+// Serve static files from the React app build directory
+// In production (Render), the structure is different
+const staticPath = process.env.NODE_ENV === 'production' 
+  ? path.join(__dirname, '../dist')  // Render structure
+  : path.join(__dirname, '../../dist'); // Local development
 console.log('Static files path:', staticPath);
 app.use(express.static(staticPath));
 
@@ -82,7 +85,9 @@ app.get('/api/diary', (req, res) => {
 
 // Catch all handler: send back React's index.html file for any non-API routes
 app.get('*', (req, res) => {
-  const indexPath = path.join(__dirname, '../../dist/index.html');
+  const indexPath = process.env.NODE_ENV === 'production'
+    ? path.join(__dirname, '../dist/index.html')  // Render structure
+    : path.join(__dirname, '../../dist/index.html'); // Local development
   console.log('Serving index.html from:', indexPath);
   res.sendFile(indexPath);
 });
