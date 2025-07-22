@@ -1,4 +1,6 @@
-import  { useState } from "react";
+// 
+
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Camera,
@@ -7,6 +9,7 @@ import {
   MapPin,
   Calendar,
 } from "lucide-react";
+import { galleryPhotos } from "../data/gallery";
 
 const GalleryPage = () => {
   const [selectedFilter, setSelectedFilter] = useState("all");
@@ -19,85 +22,10 @@ const GalleryPage = () => {
     { id: "casual", name: "Casual" },
   ];
 
-  const photos = [
-    {
-      id: 1,
-      src: "https://images.pexels.com/photos/1547971/pexels-photo-1547971.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Graduation Day",
-      category: "college",
-      location: "University",
-      date: "May 2022",
-      likes: 25,
-    },
-    {
-      id: 2,
-      src: "https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Mountain Adventure",
-      category: "trips",
-      location: "Himachal",
-      date: "Dec 2023",
-      likes: 32,
-    },
-    {
-      id: 3,
-      src: "https://images.pexels.com/photos/2747449/pexels-photo-2747449.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Birthday Party",
-      category: "celebrations",
-      location: "Home",
-      date: "Aug 2023",
-      likes: 18,
-    },
-    {
-      id: 4,
-      src: "https://images.pexels.com/photos/1128318/pexels-photo-1128318.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Beach Fun",
-      category: "trips",
-      location: "Goa",
-      date: "Jan 2024",
-      likes: 41,
-    },
-    {
-      id: 5,
-      src: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Casual Hangout",
-      category: "casual",
-      location: "Cafe",
-      date: "Mar 2024",
-      likes: 15,
-    },
-    {
-      id: 6,
-      src: "https://images.pexels.com/photos/933964/pexels-photo-933964.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Festival Celebration",
-      category: "celebrations",
-      location: "City Center",
-      date: "Nov 2023",
-      likes: 28,
-    },
-    {
-      id: 7,
-      src: "https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Study Session",
-      category: "college",
-      location: "Library",
-      date: "Feb 2022",
-      likes: 12,
-    },
-    {
-      id: 8,
-      src: "https://images.pexels.com/photos/386009/pexels-photo-386009.jpeg?auto=compress&cs=tinysrgb&w=800",
-      title: "Road Trip",
-      category: "trips",
-      location: "Highway",
-      date: "Jun 2023",
-      likes: 35,
-    },
-  ];
-
   const filteredPhotos =
     selectedFilter === "all"
-      ? photos
-      : photos.filter((photo) => photo.category === selectedFilter);
+      ? galleryPhotos
+      : galleryPhotos.filter((photo) => photo.category === selectedFilter);
 
   return (
     <div className="min-h-screen py-20 px-4">
